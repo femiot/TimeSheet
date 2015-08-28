@@ -10,6 +10,7 @@ using Microsoft.Owin.Security;
 using System.Threading.Tasks;
 using System.Globalization;
 using System.Data.Entity.Validation;
+using TimeSheet.Web.Utility;
 
 namespace TimeSheet.Web.Controllers
 {
@@ -20,6 +21,7 @@ namespace TimeSheet.Web.Controllers
 
         public TimeSheetController()
         {
+            ExcelGenerator.Generate();
             _db = new TimeSheetContext();
         }
 
@@ -59,6 +61,7 @@ namespace TimeSheet.Web.Controllers
 
             TempData["TaskDate"] = model.Count > 0 ? model.FirstOrDefault().TaskDate : D(DateTime.UtcNow);
             ViewBag.TaskDate = model.Count > 0 ? model.FirstOrDefault().TaskDate.ToString("ddd dd MMM yyyy") : D(DateTime.UtcNow).ToString("dd MMM yyyy");
+
             return View(model);
         }
 
@@ -235,11 +238,25 @@ namespace TimeSheet.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPut]
-        [ValidateAntiForgeryToken]
-        public ActionResult Update()
+
+        public ActionResult Delete(int id = 0)
         {
-            return View();
+            if (id == 0)
+                RedirectToAction("Index");
+
+            tb_Task task = _db.tb_Task.FirstOrDefault(x => x.Id == id);
+
+            TaskModel model = new TaskModel
+            {
+                Id = task.Id,
+                Client = task.ClientName.Trim(),
+                Description = task.Description.Trim(),
+                HoursSpent = task.Hours,
+                Type = task.Type,
+                TaskDate = task.tb_User_Task.TaskDate
+            };
+
+            return View(model);
         }
 
         [HttpDelete]

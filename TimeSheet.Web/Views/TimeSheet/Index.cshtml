@@ -30,13 +30,13 @@
             @Html.DisplayNameFor(model => model.Client)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.HoursSpent)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th></th>
     </tr>
@@ -47,17 +47,16 @@
             @Html.DisplayFor(modelItem => item.Client)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.HoursSpent)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Type)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

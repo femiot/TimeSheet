@@ -31,10 +31,17 @@ namespace TimeSheet.Web.Models.Mapping
             // Table & Column Mappings
             this.ToTable("tb_Task");
             this.Property(t => t.Id).HasColumnName("Id");
+            this.Property(t => t.User_TaskId).HasColumnName("User_TaskId");
             this.Property(t => t.ClientName).HasColumnName("ClientName");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.Hours).HasColumnName("Hours");
             this.Property(t => t.Type).HasColumnName("Type");
+
+            // Relationships
+            this.HasRequired(t => t.tb_User_Task)
+                .WithMany(t => t.tb_Task)
+                .HasForeignKey(d => d.User_TaskId);
+
         }
     }
 }

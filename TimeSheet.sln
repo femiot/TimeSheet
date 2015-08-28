@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeSheet.Web", "TimeSheet.Web\TimeSheet.Web.csproj", "{3EB3A5FE-901D-4C64-8761-2D0CA9E09227}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TimeSheet.Database", "TimeSheet.Database\TimeSheet.Database.sqlproj", "{9C32A1AD-A652-4094-981B-96576AB834EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{3EB3A5FE-901D-4C64-8761-2D0CA9E09227}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EB3A5FE-901D-4C64-8761-2D0CA9E09227}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EB3A5FE-901D-4C64-8761-2D0CA9E09227}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C32A1AD-A652-4094-981B-96576AB834EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C32A1AD-A652-4094-981B-96576AB834EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C32A1AD-A652-4094-981B-96576AB834EE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9C32A1AD-A652-4094-981B-96576AB834EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C32A1AD-A652-4094-981B-96576AB834EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C32A1AD-A652-4094-981B-96576AB834EE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

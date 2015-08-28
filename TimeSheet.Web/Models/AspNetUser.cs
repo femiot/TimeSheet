@@ -9,6 +9,7 @@ namespace TimeSheet.Web.Models
         {
             this.AspNetUserClaims = new List<AspNetUserClaim>();
             this.AspNetUserLogins = new List<AspNetUserLogin>();
+            this.tb_User_Task = new List<tb_User_Task>();
             this.AspNetRoles = new List<AspNetRole>();
         }
 
@@ -26,6 +27,7 @@ namespace TimeSheet.Web.Models
         public string UserName { get; set; }
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual ICollection<tb_User_Task> tb_User_Task { get; set; }
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
     }
 }

@@ -19,9 +19,13 @@ namespace TimeSheet.Web.Models.Mapping
             this.ToTable("tb_User_Task");
             this.Property(t => t.Id).HasColumnName("Id");
             this.Property(t => t.UserId).HasColumnName("UserId");
-            this.Property(t => t.TaskId).HasColumnName("TaskId");
             this.Property(t => t.TaskDate).HasColumnName("TaskDate");
-            this.Property(t => t.DateCreated).HasColumnName("DateCreated");
+
+            // Relationships
+            this.HasRequired(t => t.AspNetUser)
+                .WithMany(t => t.tb_User_Task)
+                .HasForeignKey(d => d.UserId);
+
         }
     }
 }

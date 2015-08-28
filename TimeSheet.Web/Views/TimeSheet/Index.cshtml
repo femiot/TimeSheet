@@ -4,15 +4,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>My Time log For the Day: @ViewBag.TaskDate</h2>
+<h2>My Time log: @ViewBag.TaskDate</h2>
 
+<hr />
 
 
 <form action="/TimeSheet/Search" method="post">
     <div class="form-group">
 
         <div class="col-md-10">
-            <b>Search previous days:</b> <input id="search" name="search" type="text" class="form-control" data-provide="datepicker" />
+            <b>Search previous days:</b> 
+            <input id="search" name="search" type="text" class="form-control" data-provide="datepicker" />
             <input type="submit" value="Search" class="btn btn-default" />
         </div><br />
     </div>
